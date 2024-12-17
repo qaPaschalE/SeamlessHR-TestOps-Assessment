@@ -14,8 +14,28 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
-import './commands'
-import 'cypress-mochawesome-reporter/register';
+import "./commands";
+import "cypress-mochawesome-reporter/register";
 
+// Alternatively you can use CommonJS syntax:
+// require('./commands')
+// 1. Disable Cypress uncaught exception failures from React hydration errors
+// 2. Re-enable Cypress uncaught exception failures from React hydration errors
+Cypress.on("uncaught:exception", (err, runnable) => {
+  return false;
+});
+
+// Hide fetch/XHR requests
+const app = window.top;
+if (
+  app &&
+  !app.document.head.querySelector("[data-hide-command-log-request]")
+) {
+  const style = app.document.createElement("style");
+  style.innerHTML =
+    ".command-name-request, .command-name-xhr { display: none }";
+  style.setAttribute("data-hide-command-log-request", "");
+  app.document.head.appendChild(style);
+}
 // Alternatively you can use CommonJS syntax:
 // require('./commands')

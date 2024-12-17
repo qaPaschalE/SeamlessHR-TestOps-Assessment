@@ -1,24 +1,23 @@
-# Paschal QA Framework 🎉
+# SeamlessHR TestOps Assessment 🎉
 
 <table align="center" style="margin-bottom:30px;"><tr><td align="center" width="9999" heigth="9999 " >
- <img src="cypress/assests/paschal logo (2).png" alt="paschal Logo" style="margin-top:25px;" align="center"/>
+ <img src="https://seamlesshr.com/wp-content/uploads/2024/04/logo.webp" alt="seamlessHR Logo" style="margin-top:25px;" align="center"/>
 
 #
 
-Paschal's UI test automation project using Cypress Cucumber and TypeScript.
+SeamlessHR TestOps Assessment using Cypress Cucumber and TypeScript.
 
 </td></tr></table>
 
-[![Cypress](https://img.shields.io/badge/built%20with-Cypress-15B392)](https://www.cypress.io/)
-[![Cucumber](https://img.shields.io/badge/built%20with-Cucumber-B6FFA1)](https://www.npmjs.com/package/@badeball/cypress-cucumber-preprocessor/)
-[![TypeScript](https://img.shields.io/badge/built%20with-TypeScript-blue)](https://www.typescriptlang.org/)
+[![Cypress](https://img.shields.io/badge/Tested%20with-Cypress-15B392)](https://www.cypress.io/)
+[![Cucumber](https://img.shields.io/badge/Tested%20with-Cucumber-B6FFA1)](https://www.npmjs.com/package/@badeball/cypress-cucumber-preprocessor/)
+[![TypeScript](https://img.shields.io/badge/Tested%20with-TypeScript-blue)](https://www.typescriptlang.org/)
 [![Formatting with Prettier](https://img.shields.io/badge/formatting-Prettier-ff69b4)](https://prettier.io/)
 [![Test Report with Cypress-Mochawesome-Reporter](https://img.shields.io/badge/HTML%20reporter-cypress%20mochawesome%20reporter-ff69b4)](https://www.npmjs.com/package/cypress-mochawesome-reporter/)
-[![Test Report with Cypress-Mochawesome-Reporter](https://img.shields.io/badge/slack%20reporter-cypress%20slack%20reporter-b1b1ff)](https://www.npmjs.com/package/cypress-slack-reporter/)
 
 ## Getting Started 🚀
 
-This **README** covers UI tests using the Cypress Cucumber with TypeScript for assessment [DEMO-QA](https://demoqa.com/)
+This **README** covers UI tests using the Cypress Cucumber with TypeScript for assessment [PARABANK](https://parabank.parasoft.com/parabank/index.htm)
 
 ---
 
@@ -84,7 +83,7 @@ Cucumber is a Behavior-Driven Development (BDD) tool that allows you to write hu
 1. Clone the repository and navigate to the project directory.
 
    ```bash
-   https://github.com/qaPaschalE/cypress-ts-cucumber-framework.git
+   https://github.com/qaPaschalE/SeamlessHR-TestOps-Assessment.git
    ```
 
 2. Install dependencies:
@@ -96,7 +95,7 @@ Cucumber is a Behavior-Driven Development (BDD) tool that allows you to write hu
 3. Configure environment variables in a `.env` file for sensitive values (optional):
 
 ```env
-BASE_URL= https://www.saucedemo.com/
+BASE_URL= https://parabank.parasoft.com/parabank
 ```
 
 ---
@@ -115,7 +114,6 @@ BASE_URL= https://www.saucedemo.com/
       |-- commands.ts
       |-- e2e.ts
   |-- fixtures/
-      |-- selectors.json
 |-- README.md
 |-- package.json
 |-- .env.example
@@ -145,56 +143,8 @@ npm run cypress:run
 To run specific tests locally in headless mode using tags, use the following command:
 
 ```bash
-npm run viewAndCheckout
+npm run cy:suite:account
 ```
-
----
-
-## Example Test Scenarios
-
-### UI Test Scenario
-
-```gherkin
-Feature: Cart
-I want to Filter Item, Add to cart and Remove from cart
-
-  Background: Precondition- User should visit site and log in
-    Given I visit "/"
-    And I find input by placeholder text "Username"
-    And I type "standard_user"
-    And I get element by selector "#password"
-    And I type "secret_sauce"
-    And I click on text "Login"
-    Then I see text "Products"
-
-  Scenario: Add to cart
-    When I find buttons by text "Add to cart"
-    And I get 1st element
-    And I click
-    Then I see text "Remove"
-```
-
-## Observations and Blockers
-
-```gherkin
-When I visit "/"
-## fails to load events after first run.
-# Tip use the @tag scripts to run individual tests on open mode e.g @filterItems
-# Tip use a different browser for each run
-```
-
-```json
-"scripts": {
-    "cypress:open": "dotenv -- cypress open",
-    "cypress:run": "dotenv -- cypress run",
-    "add-to-cart":"dotenv -- cypress run --env tags=@addToCart --browser chrome",
-    "remove-from-cart":"dotenv -- cypress run --env tags=@removeFromCart --browser chrome",
-    "filterItems":"dotenv -- cypress run --env tags=@filterItems --browser chrome",
-    "viewAndCheckout":"dotenv -- cypress run --env tags=@viewAndCheckout --browser chrome"
-  },
-```
-
----
 
 ## Contributing
 

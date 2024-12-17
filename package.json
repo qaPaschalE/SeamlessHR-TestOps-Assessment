@@ -1,24 +1,24 @@
 {
-  "name": "flo3_automationscript",
+  "name": "seamless-hr-testops-assessment",
   "version": "2.0.0",
   "scripts": {
     "cypress:open": "dotenv -- cypress open",
     "cypress:run": "dotenv -- cypress run",
-    "add-to-cart": "dotenv -- cypress run --env tags=@addToCart --browser chrome",
-    "remove-from-cart": "dotenv -- cypress run --env tags=@removeFromCart --browser chrome",
-    "filterItems": "dotenv -- cypress run --env tags=@filterItems --browser chrome",
-    "viewAndCheckout": "dotenv -- cypress run --env tags=@viewAndCheckout --browser chrome"
+    "cy:regression": "dotenv -- cypress run --env tags=@regression --browser chrome",
+    "cy:suite:account": "dotenv -- cypress run --env tags=@regression --browser chrome",
+    "cy:module:@logIn": "dotenv -- cypress run --env tags=@accounts --browser chrome"
   },
   "cypress-cucumber-preprocessor": {
     "filterspecs": true,
     "ommitFiltered": true,
-    "stepDefinitions": "cypress/e2e/step_definitions/index.ts"
+    "stepDefinitions": "cypress/e2e/step_definitions/*.ts"
   },
   "license": "MIT",
   "devDependencies": {
     "@badeball/cypress-cucumber-preprocessor": "latest",
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.3",
     "@cypress/browserify-preprocessor": "latest",
+    "@faker-js/faker": "^9.3.0",
     "cypress": "latest",
     "cypress-cucumber-steps": "latest",
     "cypress-mochawesome-reporter": "latest",
