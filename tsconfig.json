@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+      "target": "es5",
+      "esModuleInterop": true,
+    "module": "nodenext",
+      "types": [
+        "node",
+        "cypress",
+        "cypress-mochawesome-reporter"
+      ]
+    },
+    "include": [
+      "**/*.ts"
+    ]
+  }

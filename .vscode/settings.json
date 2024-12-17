@@ -1,0 +1,22 @@
+{
+  "cucumber.features": [
+    "cypress/e2e/features/*.feature",
+    "cypress/e2e/features/*.cy.feature",
+    "apps/qa/cypress/e2e/features/*.feature",
+    "apps/qa/cypress/e2e/features/*.cy.feature",
+    "e2e/features/*feature",
+    "features/*.feature"
+  ],
+
+  "cucumber.glue": [
+    "cypress/e2e/step_definitions/*.ts",
+    "apps/qa/cypress/e2e/step_definitions/*.ts",
+    "node_modules/cypress-cucumber-steps/src/**/*.ts",
+    "apps/qa/node_modules/cypress-cucumber-steps/src/**/*.ts",
+    "apps/qa/cypress/e2e/step_definitions/index.ts",
+    "src/**/*.ts",
+    "e2e/steps/*.py",
+    "steps/*.py",
+    "apps/qa/cypress/e2e/step_definitions/**/*.ts"
+  ]
+}
